@@ -1,0 +1,61 @@
+/* * Header */
+header {
+  width: 100%;
+  height: 5rem;
+  position: relative;
+  z-index: 4;
+  background-color: #191f21;
+}
+
+header nav {
+  font-size: 1.25rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 1rem;
+}
+
+header nav ul.navbar {
+  width: 100%;
+  padding-left: 260px;
+  justify-content: space-between;
+}
+
+/* * Navbar Section */
+nav,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul.navbar {
+  display: flex;
+}
+
+nav > ul li {
+  list-style: none;
+}
+
+header ul:first-child {
+  margin-left: 4rem;
+}
+header ul:last-child {
+  margin-right: 4rem;
+}
+
+a.nav-link {
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+a.nav-link:hover {
+  color: gainsboro;
+}
+
+/* * Icons Headers */
+
+a > .icon {
+  margin-right: 0.5rem;
+}

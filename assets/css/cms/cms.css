@@ -1,0 +1,128 @@
+/* ! Global CSS Imports */
+@import '../global.css';
+
+/* ! Header Section */
+@import './cms-header.css';
+/* ! Sidebar Section */
+@import './cms-sidebar.css';
+
+/* ! Displayed Data Section */
+@import './cms-display-data-box.css';
+
+/* ! Fonts Import */
+@font-face {
+  font-family: 'Dancing Script';
+  src: url('../../fonts/DancingScript-Regular.ttf');
+}
+
+/* TODO Overwrite CSS for main page */
+main article.container article.wrapper {
+  background-color: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  font-family: 'Dancing Script';
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ! Option Boxes Section */
+div.option-box {
+  height: calc((100% - 1rem)/3);
+  width: 100%;
+  max-width: 900px;
+  box-shadow: 0 0px 5px 2px rgb(153, 153, 153);
+  border-radius: 10px;
+}
+
+div#working-day-option.option-box {
+  background: #000 url('../../images/backgrounds/homepage-working-day.jpg')
+    no-repeat center center;
+  background-size: cover;
+}
+
+div#boats-option.option-box {
+  background: #000 url('../../images/backgrounds/homepage-boats.jpg')
+    no-repeat center center;
+  background-size: cover;
+}
+
+div#receipts-option.option-box {
+  background: #000 url('../../images/backgrounds/homepage-receipts.jpg')
+    no-repeat center center;
+  background-size: cover;
+}
+
+div.option-box:hover {
+  opacity: 0.85;
+}
+
+a.option-box-link {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: whitesmoke;
+  font-size: 2.5rem;
+  max-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.option-box-header {
+  position: relative;
+  z-index: 5;
+}
+
+div.option-box-background {
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  display: block;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: 50%;
+  background-position-x: 50%;
+  background-position-y: center;
+}
+
+div.option-box-background::after {
+  position: absolute;
+  z-index: 3;
+  height: 100%;
+  width: 100%;
+  content: '';
+  display: block;
+  background: #000;
+  opacity: 0.5;
+  border-radius: 10px;
+}
+
+div.option-box + span.divider {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* * Media Queries */
+
+/* @media only screen and (max-width: 1024px) {
+  div.option-box {
+    height: 60%;
+    height: 400px;
+  }
+}
+
+
+@media only screen and (max-width: 800px) {
+  div.option-box {
+    height: 60%;
+    height: 300px;
+  }
+} */

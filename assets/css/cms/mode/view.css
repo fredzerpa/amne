@@ -1,0 +1,51 @@
+/* ! Global CSS Imports */
+@import '../../global.css';
+
+/* ! Header Section */
+@import '../cms-header.css';
+/* ! Sidebar Section */
+@import '../cms-sidebar.css';
+
+/* ! Displayed Data Section */
+@import '../cms-display-data-box.css';
+
+/* * Table Section */
+
+table {
+  width: 100%;
+  text-align: center;
+  border-spacing: 0;
+}
+
+table thead {
+  font-size: 1.15rem;
+}
+
+table thead th {
+  padding: 1.5rem 1.5rem 0.5rem;
+}
+table tbody td {
+  padding: 0.5rem 1.5rem;
+}
+
+table tbody tr:hover {
+  background: rgba(171, 222, 255, 0.29);
+}
+
+th {
+  border-bottom: 2px solid #000;
+}
+
+tbody tr:not(:last-child) td {
+  border-bottom: 1px solid #000;
+}
+
+tbody tr:nth-of-type(even) {
+  background: rgba(207, 206, 206, 0.432);
+}
+
+tbody tr a {
+  font-size: 1.35rem;
+  text-decoration: none;
+  color: #0290e8;
+}

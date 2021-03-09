@@ -1,0 +1,195 @@
+/* ! Global CSS Imports */
+@import './global.css';
+
+/* * Heaeder */
+header {
+  width: 100%;
+  height: 5rem;
+  background-color: #b48651;
+}
+
+header nav {
+  font-size: 1.5em;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 1rem;
+}
+
+header nav ul.navbar {
+  min-width: 80%;
+  justify-content: space-around;
+}
+
+/* * Navbar Section */
+nav,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul.navbar {
+  display: flex;
+}
+
+nav > ul li {
+  list-style: none;
+}
+
+a.nav-link {
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+a.nav-link:hover {
+  color: gainsboro;
+}
+
+/* * Main Content */
+main {
+  /* Background */
+  background: #f6f8fa url('../images/backgrounds/home-page.jpg') no-repeat
+    center center;
+  background-size: cover;
+
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 3rem;
+
+  height: 100vh;
+}
+
+/* * Logo */
+#logo {
+  width: 300px;
+}
+
+#logo img {
+  width: 100%;
+  height: inherit;
+}
+
+/* * Title  */
+h1.title {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 6rem;
+  margin: 0;
+  color: #eee;
+  text-shadow: #000 1px 1px 5px;
+}
+
+h1.title + h3.description {
+  font-style: italic;
+  color: #eee;
+  text-shadow: #000 1px 1px 5px;
+  margin-top: 0;
+  font-size: 1.75rem;
+}
+
+/* * Articles */
+main article.container {
+  width: 90%;
+  max-width: 650px;
+}
+
+article.container section {
+  width: 100%;
+  background-color: white;
+  margin: 2em auto;
+  padding: 2em 3em;
+  border-radius: 10px;
+  box-shadow: 0px 10px 10px#29292998;
+}
+
+/* * Log~In Form Section */
+.section-title {
+  font-size: 1.5em;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+.form-control {
+  box-shadow: none;
+}
+.form-control {
+  width: 100%;
+  height: 43px;
+  padding: 8px 16px;
+  background-color: #eee;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+  -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/* * Register Link */
+#register {
+  text-decoration: none;
+  color:rgb(6, 90, 192);
+}
+
+#register:hover {
+  color:rgb(76, 116, 165);
+}
+
+/* * Login Button */
+section#login form div:last-child {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+input.form-submit-button {
+  padding: 0.75em 1.5em;
+}
+
+/********* Media Query ***********/
+
+/* Laptops Queries */
+@media only screen and (max-width: 1024px) {
+  main article.container {
+    width: 85%;
+  }
+}
+
+/* Tablets Queries */
+@media only screen and (max-width: 768px) {
+  h1.title {
+    font-size: 5rem;
+  }
+}
+
+/* Mobile Queries */
+@media only screen and (max-width: 500px) {
+  main article.container {
+    width: 96%;
+  }
+
+  h1.title {
+    font-size: 3rem;
+  }
+
+  h1.title + h3.description {
+    font-size: 1.2em;
+  }
+
+  #logo {
+    width: 200px;
+  }
+
+  #login {
+    padding: 2em 1.5em;
+  }
+}

@@ -1,0 +1,63 @@
+article.container {
+  width: calc(100% - 260px);
+  max-height: calc(100vh - 5rem);
+  background-color: #dde3eb;
+  overflow-y: scroll;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+main article.container article.wrapper {
+  width: 92%;
+  min-height: 92%;
+  background-color: whitesmoke;
+  border-radius: 5px;
+  padding: 3rem 4rem;
+  box-shadow: 0 0px 3px 1px rgb(68, 68, 68);
+  margin: auto;
+}
+
+main article.container article.wrapper.view-mode {
+  overflow-x: scroll;
+  padding: 0;
+}
+
+/* * Scrollbar */
+
+main article.container article.wrapper.view-mode::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+article.container::-webkit-scrollbar {
+  width: 10px;
+  height: 5px;
+}
+
+/* Track */
+main article.container article.wrapper.view-mode::-webkit-scrollbar-track,
+article.container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+main article.container article.wrapper.view-mode::-webkit-scrollbar-thumb,
+article.container::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+main article.container article.wrapper.view-mode::-webkit-scrollbar-thumb:hover,
+article.container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* * Media Query */
+
+@media only screen and (max-width: 1300px) {
+  main article.container article.wrapper {
+    width: 96%;
+  }
+}

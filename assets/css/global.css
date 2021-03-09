@@ -1,0 +1,19 @@
+/* !Dependencies */
+/* @import url('./assets/fontawesome/css/brands.min.css'); */
+/* * Footer */
+@import url('./footer.css');
+
+/* * Global CSS */
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+}
