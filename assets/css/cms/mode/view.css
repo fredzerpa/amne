@@ -30,6 +30,7 @@ table tbody td {
 
 table tbody tr:hover {
   background: rgba(171, 222, 255, 0.29);
+  cursor: pointer;
 }
 
 th {

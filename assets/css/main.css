@@ -50,7 +50,7 @@ a.nav-link:hover {
 /* * Main Content */
 main {
   /* Background */
-  background: #f6f8fa url('../images/backgrounds/home-page.jpg') no-repeat
+  background: #f6f8fa url('../../assets/images/logo.png') no-repeat
     center center;
   background-size: cover;
 

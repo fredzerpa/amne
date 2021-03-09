@@ -22,15 +22,15 @@
       <article class="container">
         <article class="wrapper" id="data-display">
           <div class="option-box" id="working-day-option">
-            <a href="./working-days.html?mode=view&search=today" class="option-box-link">
+            <a href="../staff/data-display.php" class="option-box-link">
               <div class="option-box-header">
-                <h2 class="option-mode-title">Jornada del Dia</h2>
+                <h2 class="option-mode-title">Jornadas del Dia</h2>
               </div>
               <div class="option-box-background"></div>
             </a>
           </div>
           <div class="option-box" id="boats-option">
-            <a href="./boats.html?mode=view&search=last" class="option-box-link">
+            <a href="../staff/data-display.php" class="option-box-link">
               <div class="option-box-header">
                 <h2 class="option-mode-title">Ult. Barco Registrado</h2>
               </div>
@@ -38,7 +38,7 @@
             </a>
           </div>
           <div class="option-box" id="receipts-option">
-            <a href="./receipts.html?mode=view&search=last" class="option-box-link">
+            <a href="../staff/data-display.php" class="option-box-link">
               <div class="option-box-header">
                 <h2 class="option-mode-title">Ult. Factura Registrada</h2>
               </div>

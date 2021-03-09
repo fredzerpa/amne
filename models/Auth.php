@@ -36,9 +36,9 @@ class Auth extends Conexion
     $resultado->execute(array(":username" => $this->user));
 
     $password = $resultado->fetch();
-
-    $pass_tmp = $password['password'];
-
+    
+    $pass_tmp = $password['Clave'];
+    
     return password_verify($this->pass, $pass_tmp);
   }
 

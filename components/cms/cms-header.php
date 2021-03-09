@@ -10,7 +10,7 @@
         <a class="nav-link" href="#about-me"> Editar Perfil</a>
       </li>
       <li class="navbar-item">
-        <a class="nav-link" href="#contact">Cerrar Sesion</a>
+        <a class="nav-link" href="../../utils/logout.php">Cerrar Sesion</a>
       </li>
     </ul>
   </nav>
