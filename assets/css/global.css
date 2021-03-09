@@ -1,5 +1,9 @@
 /* !Dependencies */
 /* @import url('./assets/fontawesome/css/brands.min.css'); */
+
+/* ! Error Message CSS */
+@import url('./error-message/error-message.css');
+
 /* * Footer */
 @import url('./footer.css');
 

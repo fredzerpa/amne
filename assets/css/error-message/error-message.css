@@ -7,6 +7,10 @@
   margin-bottom: 1rem;
 }
 
-#error-notification #error-message {
+#error-notification #error-title {
+  margin: 0 .75rem 0 0;
+}
+
+#eror-notification #error-description {
   margin: 0;
 }

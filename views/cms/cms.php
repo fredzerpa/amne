@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -21,6 +23,7 @@
       <!-- Start Displayed Data Section -->
       <article class="container">
         <article class="wrapper" id="data-display">
+          <?php print_r($_SESSION) ?>
           <div class="option-box" id="working-day-option">
             <a href="../staff/data-display.php" class="option-box-link">
               <div class="option-box-header">

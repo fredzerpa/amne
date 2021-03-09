@@ -1,3 +1,7 @@
+<?php
+  session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -21,6 +25,7 @@
         <h3 class="description">Y tu, quieres vender tu pesca?</h3>
         <article class="container">
           <section id="login">
+            <?php if (!$_GET['userVerif']) {include_once('../../components/notifications/error-message.php');} ?>
             <h3 class="section-title">Iniciar Sesion</h3>
             <form method="POST" action="../../controllers/AuthControllers.php">
               <div class="form-group">
