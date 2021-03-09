@@ -21,36 +21,7 @@
       <!-- End Side Bar Section -->
 
       <!-- Start Displayed Data Section -->
-      <article class="container">
-        <article class="wrapper" id="data-display">
-          <?php print_r($_SESSION) ?>
-          <div class="option-box" id="working-day-option">
-            <a href="../staff/data-display.php" class="option-box-link">
-              <div class="option-box-header">
-                <h2 class="option-mode-title">Jornadas del Dia</h2>
-              </div>
-              <div class="option-box-background"></div>
-            </a>
-          </div>
-          <div class="option-box" id="boats-option">
-            <a href="../staff/data-display.php" class="option-box-link">
-              <div class="option-box-header">
-                <h2 class="option-mode-title">Ult. Barco Registrado</h2>
-              </div>
-              <div class="option-box-background"></div>
-            </a>
-          </div>
-          <div class="option-box" id="receipts-option">
-            <a href="../staff/data-display.php" class="option-box-link">
-              <div class="option-box-header">
-                <h2 class="option-mode-title">Ult. Factura Registrada</h2>
-              </div>
-              <div class="option-box-background"></div>
-            </a>
-          </div>
-          
-        </article>
-      </article>
+      <?php include_once('../../components/cms/cms-homepage.php') ?>
       <!-- End Displayed Data Section -->
     </main>
     <script src="../../assets/fontawesome/js/all.min.js"></script>

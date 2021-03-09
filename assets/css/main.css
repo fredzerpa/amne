@@ -1,20 +1,6 @@
 /* ! Global CSS Imports */
 @import './global.css';
 
-
-#error-notification {
-  width: 100%;
-  padding: 1rem 2rem;
-  background: rgba(255, 0, 0, 0.13);
-  border: 1px solid red;
-  border-radius: 10px;
-  margin-bottom: 1rem;
-}
-
-#error-notification #error-message {
-  margin: 0;
-}
-
 /* * Heaeder */
 header {
   width: 100%;
@@ -64,7 +50,7 @@ a.nav-link:hover {
 /* * Main Content */
 main {
   /* Background */
-  background: #f6f8fa url('../../assets/images/logo.png') no-repeat
+  background: #f6f8fa url('../../assets/images/backgrounds/home-page.jpg') no-repeat
     center center;
   background-size: cover;
 

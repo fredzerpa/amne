@@ -26,11 +26,15 @@ table thead th {
 }
 table tbody td {
   padding: 0.5rem 1.5rem;
+  height: 45px;
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 table tbody tr:hover {
   background: rgba(171, 222, 255, 0.29);
-  cursor: pointer;
 }
 
 th {

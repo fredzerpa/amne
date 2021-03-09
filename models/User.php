@@ -1,5 +1,6 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'] . 'config/conexion.php');
+
+require_once('../../config/conexion.php');
 
 class User extends Conexion
 {
@@ -12,7 +13,7 @@ class User extends Conexion
   public function create($cedula, $nombre, $apellidos, $telefono, $email, $direccion, $clave, $nivel)
   {
 
-    $query = "INSERT INTO users (Cedula, Nombre, Apellido, Telefono, Email, Direccion, Clave, Nivel)
+    $query = "INSERT INTO usuarios (Cedula, Nombre, Apellidos, Telefono, Email, Direccion, Clave, Nivel)
                 VALUES (:cedula, :name, :lastname, :phone, :email, :address, :password, :level)";
 
     $resultado = $this->conexionBD->prepare($query);
@@ -20,15 +21,18 @@ class User extends Conexion
     $resultado->execute(array(
       ":cedula" => $cedula, ":name" => $nombre, ":lastname" => $apellidos, ":phone" => $telefono, ":email" => $email, ":address" => $direccion, ":password" => $clave, ":level" => $nivel
     ));
-
-    return header('location: ../views/admin/users/users.php?success=true');
+    
+    $_SESSION['notification'] = true;
+    $_SESSION['notification_title'] = 'Crear Usuario';
+    $_SESSION['notification_message'] = 'Se ha creado el usuario satisfactoriamente.';
+    return header('location: ../../views/admin/users.php?action=create&success=true');
   }
 
   public function read($id = "")
   {
 
     if ($id != "") {
-      $query = "SELECT * FROM users WHERE account_id = :account_id";
+      $query = "SELECT Id, Nombre, Apellidos, Cedula, Telefono, Email, Direccion, Nivel FROM usuarios WHERE Id = :account_id";
 
       $resultado = $this->conexionBD->prepare($query);
 
@@ -37,7 +41,7 @@ class User extends Conexion
       return $resultado->fetch();
     }
 
-    $query = "SELECT * FROM users";
+    $query = "SELECT Id, Nombre, Apellidos, Cedula, Telefono, Email, Direccion, Nivel FROM usuarios";
 
     $resultado = $this->conexionBD->prepare($query);
 
@@ -46,25 +50,50 @@ class User extends Conexion
     return $resultado->fetchAll();
   }
 
-  public function update($id, $cedula, $nombre, $apellidos, $telefono, $email, $direccion, $nivel)
+  public function update($id, $cedula, $nombre, $apellidos, $telefono, $email, $direccion, $clave = "", $nivel)
   {
+    if ($clave != "") {
+      $query = "UPDATE usuarios SET Cedula = :cedula, Nombre = :name, Apellidos = :lastname, Telefono = :phone, Email = :email, Direccion = :address, Clave = :password, Nivel = :level WHERE Id = :account_id";
 
-    $query = "UPDATE usuarios SET Cedula = :cedula, Nombre = :name, Apellidos = :lastName, Telefono = :phone, Email = :email, Direccion = :address, Nivel = :level WHERE Id = :account_id";
+      $resultado = $this->conexionBD->prepare($query);
+
+      $resultado->execute(array(
+        ":account_id" => $id,
+        ":name" => $nombre,
+        ":lastname" => $apellidos,
+        ":cedula" => $cedula,
+        ":phone" => $telefono,
+        ":email" => $email,
+        ":address" => $direccion,
+        ":password" => $clave,
+        ":level" => $nivel
+      ));
+
+      $_SESSION['notification'] = true;
+      $_SESSION['notification_title'] = 'Actualizar Usuario';
+      $_SESSION['notification_message'] = 'Se ha actualizado el usuario satisfactoriamente.';
+      return header('location: ../../views/admin/users.php?action=update&id=' . $id . '&success=true');
+    }
+
+    $query = "UPDATE usuarios SET Cedula = :cedula, Nombre = :name, Apellidos = :lastname, Telefono = :phone, Email = :email, Direccion = :address, Nivel = :level WHERE Id = :account_id";
 
     $resultado = $this->conexionBD->prepare($query);
 
     $resultado->execute(array(
+      ":account_id" => $id,
       ":name" => $nombre,
-      ":lastName" => $apellidos,
+      ":lastname" => $apellidos,
       ":cedula" => $cedula,
-      ":phone" => $telefono, 
+      ":phone" => $telefono,
       ":email" => $email,
       ":address" => $direccion,
-      ":level" => $nivel, 
-      ":account_id" => $id
+      ":level" => $nivel
     ));
 
-    return header('location: ../views/admin/users/users.php?success=true');
+    $_SESSION['notification'] = true;
+    $_SESSION['notification_title'] = 'Actualizar Usuario';
+    $_SESSION['notification_message'] = 'Se ha actualizado el usuario satisfactoriamente.';
+    return header('location: ../../views/admin/users.php?action=update&id=' . $id . '&success=true');
   }
 
   public function delete($id)
@@ -76,22 +105,23 @@ class User extends Conexion
 
     $resultado->execute(array(":account_id" => $id));
 
-    return header('location: ../views/admin/users/users.php?success=true');
+    $_SESSION['notification'] = true;
+    $_SESSION['notification_title'] = 'Eliminar Usuario';
+    $_SESSION['notification_message'] = 'Se ha eliminado el usuario satisfactoriamente.';
+    return header('location: ../../views/staff/data-display.php?table=usuarios&success=true');
   }
 
   public function updateRegular($id, $cedula, $nombre, $apellidos, $telefono, $email, $direccion)
   {
 
-    $query = "UPDATE usuarios SET Nombre = :name, Apellidos = :lastName, Email = :email, 
-                address = :address WHERE account_id = :account_id";
+    $query = "UPDATE usuarios SET Nombre = :name, Apellidos = :lastname, Telefono = :phone, Email = :email, address = :address WHERE Id = :account_id";
 
     $resultado = $this->conexionBD->prepare($query);
 
     $resultado->execute(array(
-      ":name" => $nombre, ":email" => $email,
-      ":address" => $direccion, ":account_id" => $id
+      ":account_id" => $id, ":name" => $nombre, ":lastname" => $apellidos, ":email" => $email, ":address" => $direccion, ":username" => $cedula, ":phone" => $telefono
     ));
 
-    return header('location: ../views/regular/home/home.php?success=true');
+    return header('location: ../../views/cms/cms.php?success=true');
   }
 }

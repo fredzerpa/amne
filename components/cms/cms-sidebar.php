@@ -33,28 +33,33 @@ if (strstr($path, 'working-days.php') || strstr($path, 'table=jornadas')) {
 <aside class="side-navbar">
   <ul class="side-nav">
     <li class="side-nav-link <?php echo $workingday ?>">
-      <a href="../staff/data-display.php?table=jornadas">
+      <a class="link" href="../staff/data-display.php?table=jornadas">
         <div class="icon-container"><i class="far fa-clock"></i></div>
         Jornadas
       </a>
     </li>
     <li class="side-nav-link <?php echo $boats ?>">
-      <a href="../staff/data-display.php?table=barcos">
+      <a class="link" href="../staff/data-display.php?table=barcos">
         <div class="icon-container"><i class="fas fa-ship"></i></div>
         Barcos
       </a>
     </li>
     <li class="side-nav-link <?php echo $receipts ?>">
-      <a href="../staff/data-display.php?table=facturas">
+      <a class="link" href="../staff/data-display.php?table=facturas">
         <div class="icon-container"><i class="fas fa-receipt"></i></div>
         Facturas
       </a>
     </li>
     <li class="side-nav-link <?php echo $users ?>">
-      <a href="../staff/data-display.php?table=usuarios">
+      <a class="link" href="../staff/data-display.php?table=usuarios">
         <div class="icon-container"><i class="fas fa-user-alt"></i></div>
         Usuarios
       </a>
+    </li>
+    <li class="side-nav-link user-name">
+      <span class="username">
+        Usuario: <i class="displayed-username"><?php echo $_SESSION['nombre']; ?></i>
+      </span>
     </li>
   </ul>
 </aside>

@@ -3,10 +3,21 @@ article.container {
   max-height: calc(100vh - 5rem);
   background-color: #dde3eb;
   overflow-y: scroll;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
   padding: 2rem 0;
+}
+
+
+main article > div.wrapper {
+  width: 92%;
+  margin: 0 auto 1rem;
+}
+
+main article > div.wrapper a.button {
+  margin-left: auto;
+}
+
+main article > div.wrapper a.button button {
+  padding: .5rem 1.25rem;
 }
 
 main article.container article.wrapper {

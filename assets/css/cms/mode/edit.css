@@ -45,6 +45,10 @@ form {
   width: calc(100% / 3) !important;
 }
 
+.lg-size {
+  width: 90%!important;
+}
+
 div.wrapper {
   width: 100%;
   display: flex;
@@ -93,6 +97,6 @@ textarea.form-control {
   margin-left: auto;
 }
 
-input.form-button {
+.form-button {
   padding: 1em;
 }

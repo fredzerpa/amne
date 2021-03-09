@@ -17,12 +17,19 @@ aside.side-navbar {
 aside.side-navbar ul.side-nav {
   height: 100%;
   padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
 ul.side-nav li.side-nav-link {
   width: 100%;
   height: 50px;
   /* background: #000; */
+}
+
+ul.side-nav li:last-child {
+  margin-top: auto;
+  background-color: rgb(8 21 13 / 0.5);
 }
 
 li.side-nav-link a {
@@ -36,19 +43,41 @@ li.side-nav-link a {
   padding-left: 65px;
 }
 
-li.side-nav-link a:hover {
+li.side-nav-link span.username {
+  height: 100%;
+  width: 100%;
+  font-size: 1.15rem;
+  text-decoration: none;
+  color: ivory;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  /* padding-left: 65px; */
+}
+
+li.side-nav-link span.username i.displayed-username {
+  margin-left: 1rem;
+  color: #bedeff;
+  width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+li.side-nav-link a.link:hover {
   background: #3b5363;
   border: 2px solid rgba(0, 0, 0, 0.089);
   padding-left: 75px;
 }
 
-li.side-nav-link.active a {
+li.side-nav-link.active a.link {
   background: #3b5363;
   border: 2px solid rgba(0, 0, 0, 0.089);
   padding-left: 75px;
 }
 
-li.side-nav-link a div.icon-container {
+li.side-nav-link a.link div.icon-container {
   width: 30px;
   height: 25px;
   display: flex;

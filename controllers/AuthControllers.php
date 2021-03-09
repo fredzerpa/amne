@@ -6,21 +6,21 @@ $verificar = new Auth();
 session_start();
 
 if ($verificar->login()) {
-  
-  unset($_SESSION['error']);
-  unset($_SESSION['errorMessage']);
   $_SESSION['usuario'] = $verificar->getUsuario();
   $_SESSION['account_id'] = $verificar->getAccountId();
-  $_SESSION['level'] = $verificar->getRole();
-  
-  header('location: ../views/cms/cms.php');
-  
-} else {
-  
-  $_SESSION['error'] = true;
-  $_SESSION['errorMessage'] = 'Usuario y/o Clave Erronea';
-  header('location: ../views/login/login.php?userVerif=false');
-  
-}
+  $_SESSION['nivel'] = $verificar->getRole();
+  $_SESSION['nombre'] = $verificar->getName();
 
-?>
+  if ($_SESSION['nivel'] == 1) {
+    $_SESSION['isAdmin'] = true;
+  } else {
+    $_SESSION['isAdmin'] = false;
+  }
+
+  header('location: ../views/cms/cms.php');
+} else {
+  $_SESSION['notification'] = true;
+  $_SESSION['notification_title'] = 'Datos Invalidos';
+  $_SESSION['notification_message'] = 'Usuario y/o Clave Erronea.';
+  header('location: ../views/login/login.php?error=true');
+}

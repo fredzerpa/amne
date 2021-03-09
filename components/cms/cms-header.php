@@ -7,7 +7,7 @@
         </a>
       </li>
       <li class="navbar-item">
-        <a class="nav-link" href="#about-me"> Editar Perfil</a>
+        <a class="nav-link" href="../admin/users.php?action=update&id=<?php echo $_SESSION['account_id']; ?>"> Actualizar Perfil</a>
       </li>
       <li class="navbar-item">
         <a class="nav-link" href="../../utils/logout.php">Cerrar Sesion</a>
